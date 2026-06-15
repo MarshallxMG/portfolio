@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Command } from "lucide-react";
+import { Search } from "lucide-react";
 import { navItems } from "@/lib/data";
 import CommandPalette from "./CommandPalette";
 
@@ -84,8 +84,8 @@ export default function Navbar() {
             data-cursor
             className="flex items-center gap-2 rounded-lg border border-glow/20 bg-white/5 px-3 py-1.5 font-mono text-xs text-white/70 transition-colors hover:border-glow/50 hover:text-white"
           >
-            <Command size={13} />
-            <span className="hidden sm:inline">K</span>
+            <Search size={13} />
+            <span className="hidden sm:inline">Search</span>
           </button>
         </nav>
       </motion.header>

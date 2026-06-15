@@ -90,8 +90,8 @@ export default function Contact() {
   );
 
   const contactLinks = [
-    { icon: Mail, label: profile.email, href: `mailto:${profile.email}` },
-    { icon: Phone, label: profile.phone, href: `tel:${profile.phone}` },
+    { icon: Mail, label: profile.email, href: null as string | null },
+    { icon: Phone, label: profile.phone, href: null as string | null },
     { icon: Github, label: "github.com/MarshallxMG", href: profile.links.github },
     { icon: Linkedin, label: "linkedin.com/in/manas-goel", href: profile.links.linkedin },
   ];
@@ -105,14 +105,23 @@ export default function Contact() {
             Have a data problem worth solving, or a role in mind? Let&apos;s talk.
           </p>
           <div className="mt-8 space-y-3">
-            {contactLinks.map(({ icon: Icon, label, href }) => (
-              <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" data-cursor className="group flex items-center gap-3 font-mono text-sm text-white/65 transition-colors hover:text-cyan">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-colors group-hover:border-glow/50">
-                  <Icon size={16} />
-                </span>
-                {label}
-              </a>
-            ))}
+            {contactLinks.map(({ icon: Icon, label, href }) =>
+              href ? (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" data-cursor className="group flex items-center gap-3 font-mono text-sm text-white/65 transition-colors hover:text-cyan">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-colors group-hover:border-glow/50">
+                    <Icon size={16} />
+                  </span>
+                  {label}
+                </a>
+              ) : (
+                <div key={label} className="flex select-text items-center gap-3 font-mono text-sm text-white/65">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                    <Icon size={16} />
+                  </span>
+                  {label}
+                </div>
+              )
+            )}
           </div>
         </Reveal>
 
