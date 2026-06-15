@@ -10,7 +10,7 @@ const display = Sora({ subsets: ["latin"], variable: "--font-display", weight: [
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
-const url = "https://manas-goel.vercel.app";
+const url = "https://portfolio-xi-seven-59.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
