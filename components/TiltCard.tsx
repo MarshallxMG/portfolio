@@ -22,17 +22,41 @@ export default function TiltCard({ children, className = "" }: { children: React
   };
 
   return (
-    <div
-      ref={ref}
-      onMouseMove={onMove}
-      onMouseLeave={reset}
-      className={`relative transition-transform duration-200 ease-out [transform-style:preserve-3d] ${className}`}
-      style={{
-        backgroundImage:
-          "radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(124,155,255,0.14), transparent 45%)",
-      }}
-    >
-      {children}
+    <div className="glow-wrap group relative rounded-[26px]">
+      {/* animated gradient glow border, revealed on hover */}
+      <div className="glow-border pointer-events-none absolute -inset-px rounded-[26px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div
+        ref={ref}
+        onMouseMove={onMove}
+        onMouseLeave={reset}
+        className={`relative transition-transform duration-200 ease-out [transform-style:preserve-3d] ${className}`}
+        style={{
+          backgroundImage:
+            "radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(124,155,255,0.14), transparent 45%)",
+        }}
+      >
+        {children}
+      </div>
+
+      <style jsx>{`
+        .glow-border {
+          background: conic-gradient(
+            from 0deg,
+            #3b6bff,
+            #a855f7,
+            #22d3ee,
+            #3b6bff
+          );
+          filter: blur(14px);
+          animation: spin 6s linear infinite;
+        }
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .glow-border { animation: none; }
+        }
+      `}</style>
     </div>
   );
 }

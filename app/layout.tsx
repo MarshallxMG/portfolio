@@ -5,6 +5,8 @@ import { profile } from "@/lib/data";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
+import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 
 const display = Sora({ subsets: ["latin"], variable: "--font-display", weight: ["400", "600", "700", "800"] });
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
@@ -47,6 +49,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body>
         <LoadingScreen />
+        <ScrollProgress />
+        <BackToTop />
         <CustomCursor />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
