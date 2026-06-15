@@ -1,0 +1,3 @@
+Contact: mailto:manasgoel2003@gmail.com
+Preferred-Languages: en
+Canonical: https://manas-goel.vercel.app/.well-known/security.txt
