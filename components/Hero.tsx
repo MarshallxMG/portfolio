@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/lib/data";
 import { roundTo } from "@/lib/utils";
 import Typewriter from "./Typewriter";
@@ -99,6 +99,9 @@ export default function Hero() {
           >
             Get in Touch
           </MagneticButton>
+          <a href="/Manas_Resume.pdf" download data-cursor className="inline-flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/5 px-7 py-3 font-mono text-sm text-cyan transition-colors hover:bg-cyan/10">
+            <Download size={16} /> Download CV
+          </a>
           <div className="flex items-center gap-1">
             {[
               { icon: Github, url: profile.links.github },

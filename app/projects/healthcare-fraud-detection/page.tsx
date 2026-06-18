@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, Activity, ShieldCheck, Zap } from "lucide-react";
 import { project } from "@/lib/data";
 import Background from "@/components/Background";
-import CustomCursor from "@/components/CustomCursor";
 import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
 
@@ -58,7 +57,6 @@ export default function ProjectPage() {
   return (
     <main className="relative min-h-screen">
       <Background />
-      <CustomCursor />
 
       <div className="mx-auto max-w-5xl px-6 pt-28">
         <Link href="/#projects" data-cursor className="inline-flex items-center gap-2 font-mono text-sm text-white/60 hover:text-cyan">
